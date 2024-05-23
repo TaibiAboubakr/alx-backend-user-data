@@ -54,4 +54,3 @@ class SessionExpAuth(SessionAuth):
         if sess_time < datetime.now():
             return None
         return user_infos.get("user_id")
-
