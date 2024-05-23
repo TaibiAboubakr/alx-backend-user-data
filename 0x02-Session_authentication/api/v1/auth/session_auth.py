@@ -5,11 +5,12 @@ Definition of class SessionAuth
 from .auth import Auth
 import uuid
 
+
 class SessionAuth(Auth):
     """ Implement Session Authorization methods
     """
     user_id_by_session_id = {}
-    
+
     def create_session(self, user_id: str = None) -> str:
         """ Create session method """
         if user_id is None:
