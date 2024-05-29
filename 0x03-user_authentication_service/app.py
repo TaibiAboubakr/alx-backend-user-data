@@ -2,10 +2,9 @@
 """ flask app """
 
 
-from flask import (
-    Flask,
-    request,
-    jsonify)
+from flask import Flask
+from flask import request
+from flask import jsonify
 from auth import Auth
 app = Flask(__name__)
 AUTH = Auth()
