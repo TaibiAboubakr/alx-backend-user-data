@@ -100,7 +100,9 @@ def update_password() -> str:
         AUTH.update_password(reset_token, new_password)
         pass_changed = True
     except ValueError:
-        abort(403)
+        pass
+    if not pass_changed:
+        abort(403, description="Failed to create session.")
     if pass_changed:
         return jsonify({"email": email, "message": "Password updated"})
 
