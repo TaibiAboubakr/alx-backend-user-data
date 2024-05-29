@@ -46,7 +46,7 @@ def login() -> str:
     if not session_id:
         abort(500, description="Failed to create session.")
 
-    response = make_response(jsonify({"email": email, "message": "logged in"}), 200)
+    response = make_response(jsonify({"email": email, "message": "logged in"}))
     response.set_cookie("session_id", session_id)
     return response
 
