@@ -99,9 +99,9 @@ def update_password():
         return jsonify({"message": "email, token, password are required"}), 400
     try:
         AUTH.update_password(reset_token=reset_token, password=new_password)
-        return jsonify({"email": email, "message": "Password updated"})
     except ValueError:
         abort(403)
+    return jsonify({"email": email, "message": "Password updated"})
 
 
 if __name__ == "__main__":
