@@ -95,8 +95,6 @@ def update_password():
     email = request.form.get("email", None)
     reset_token = request.form.get("reset_token", None)
     new_password = request.form.get("new_password", None)
-    if not email or not reset_token or not new_password:
-        return jsonify({"message": "email, token, password are required"}), 400
     try:
         AUTH.update_password(reset_token=reset_token, password=new_password)
     except ValueError:
