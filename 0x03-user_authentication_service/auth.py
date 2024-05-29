@@ -68,7 +68,9 @@ class Auth:
             return None
 
     def destroy_session(self, user_id: int) -> None:
-        """Find the user corresponding to the given session ID."""
+        """
+        Find the user corresponding to the given ID and destroy your session
+        """
         if not user_id:
             return None
         try:
