@@ -102,7 +102,7 @@ def update_password() -> str:
     except ValueError:
         pass
     if not pass_changed:
-        abort(403, description="Failed to create session.")
+        abort(403, description="Failed to update password.")
     if pass_changed:
         return jsonify({"email": email, "message": "Password updated"})
 
