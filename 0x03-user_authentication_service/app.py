@@ -100,7 +100,7 @@ def update_password() -> str:
         AUTH.update_password(reset_token, new_password)
         pass_changed = True
     except ValueError:
-        pass
+        pass_changed = False
     if not pass_changed:
         abort(403, description="Failed to update password.")
     if pass_changed:
